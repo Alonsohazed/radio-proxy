@@ -51,11 +51,12 @@ def stream():
             headers={
                 'Cache-Control': 'no-cache',
                 'Connection': 'keep-alive',
+                'Transfer-Encoding': 'chunked',  # <- clave para streaming real
                 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Methods': 'GET',
                 'Access-Control-Allow-Headers': 'Content-Type'
-            }
-        )
+    }
+)
         
     except Exception as e:
         app.logger.error(f"Failed to start stream: {str(e)}")
