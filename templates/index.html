@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Streaming Proxy</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .radio-player {
+            background: var(--bs-dark);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+        }
+        .audio-controls {
+            width: 100%;
+            max-width: 500px;
+        }
+        .embed-code {
+            background: var(--bs-gray-900);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h1 class="display-4 mb-3">
+                        <i class="fas fa-radio text-primary"></i>
+                        Radio Streaming Proxy
+                    </h1>
+                    <p class="lead text-muted">Live audio streaming service for web integration</p>
+                </div>
+
+                <div class="radio-player text-center mb-5">
+                    <div class="mb-4">
+                        <h3 class="mb-3">Live Radio Stream</h3>
+                        <p class="text-muted mb-4">
+                            <i class="fas fa-broadcast-tower"></i>
+                            Broadcasting from 192.99.41.102:6902/stream
+                        </p>
+                    </div>
+                    
+                    <div class="d-flex justify-content-center mb-4">
+                        <audio controls class="audio-controls" preload="none">
+                            <source src="/stream" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-code"></i>
+                            Embed Code for Wix
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-3">Copy this code to embed the radio player in your Wix website:</p>
+                        <div class="embed-code">
+                            <code>
+&lt;audio controls autoplay&gt;<br>
+&nbsp;&nbsp;&lt;source src="{{ request.url_root }}stream" type="audio/mpeg"&gt;<br>
+&nbsp;&nbsp;Your browser does not support the audio element.<br>
+&lt;/audio&gt;
+                            </code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="/test" class="btn btn-outline-primary">
+                        <i class="fas fa-vial"></i> Test Page
+                    </a>
+                    <a href="/health" class="btn btn-outline-info ms-2">
+                        <i class="fas fa-heartbeat"></i> Health Check
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
